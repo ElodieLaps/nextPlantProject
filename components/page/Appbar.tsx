@@ -17,6 +17,11 @@ export default function Appbar({ title }: AppbarProps) {
                about
             </Link>
          </div>
+         <style jsx> {`
+            
+            
+            
+         `} </style>
       </div>
    );
 }

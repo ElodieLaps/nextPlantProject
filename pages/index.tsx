@@ -2,6 +2,7 @@ import Layout from '../components/page/Layout'
 import Image from 'next/image'
 import { token } from './api/hello'
 import { InferGetStaticPropsType } from 'next'
+import Plant from '../components/plant/Plant'
 
 export default function Home({ page }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -13,14 +14,21 @@ export default function Home({ page }: InferGetStaticPropsType<typeof getStaticP
         width="200"
         height="200"
         quality={60}
-        className="plant-picture rounded-2xl object-cover object-center m-1"
+        className="plant-picture rounded-2xl object-cover object-center"
       />
       {console.log(page.data)}
       {page.data.map((plant: Plant) =>
-        <div key={plant.id}>
-          {plant.common_name}
-        </div>
+        <Plant
+          key={plant.id}
+          common_name={plant.common_name}
+          image_url={plant.image_url}
+        />
       )}
+
+      <style jsx> {`
+          color: green;
+
+      `} </style>
     </Layout>
   )
 }
@@ -28,6 +36,7 @@ export default function Home({ page }: InferGetStaticPropsType<typeof getStaticP
 type Plant = {
   id: number;
   common_name: string;
+  image_url: string;
 }
 
 type Page = {
