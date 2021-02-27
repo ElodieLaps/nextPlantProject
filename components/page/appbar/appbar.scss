@@ -1,0 +1,14 @@
+@import "../../../styles/mixin.scss";
+
+div.appbar {
+  @include flexDisplay(space-between, center, row);
+  @include shadows(0px 0px 5px #666);
+
+  background-color: rgb(140, 212, 140);
+  padding: 10px;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}

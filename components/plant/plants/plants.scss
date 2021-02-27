@@ -1,0 +1,6 @@
+@import "../../../styles/mixin.scss";
+
+div.plants {
+  @include flexDisplay(space-evenly, stretch, row);
+  flex-wrap: wrap;
+}

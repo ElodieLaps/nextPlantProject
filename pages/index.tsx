@@ -1,46 +1,20 @@
 import Layout from '../components/page/Layout'
-import Image from 'next/image'
 import { token } from './api/hello'
 import { InferGetStaticPropsType } from 'next'
-import Plant from '../components/plant/Plant'
+import Plants, { PlantType } from '../components/plant/plants/Plants'
 
 export default function Home({ page }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout pageTitle="page d'accueil">
       <h1>home content</h1>
-      <Image
-        src="/img/default_plant.jpg"
-        alt="plante par défaut"
-        width="200"
-        height="200"
-        quality={60}
-        className="plant-picture rounded-2xl object-cover object-center"
-      />
       {console.log(page.data)}
-      {page.data.map((plant: Plant) =>
-        <Plant
-          key={plant.id}
-          common_name={plant.common_name}
-          image_url={plant.image_url}
-        />
-      )}
-
-      <style jsx> {`
-          color: green;
-
-      `} </style>
+      <Plants plants={page.data} />
     </Layout>
   )
 }
 
-type Plant = {
-  id: number;
-  common_name: string;
-  image_url: string;
-}
-
 type Page = {
-  data: Array<Plant>;
+  data: Array<PlantType>;
 }
 
 export const getStaticProps = async () => {

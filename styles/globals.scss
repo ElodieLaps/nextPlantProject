@@ -1,4 +1,12 @@
 @import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+@import "../components/page/appbar/appbar.scss";
+@import "../components/plant/plant/plant.scss";
+@import "../components/plant//plants/plants.scss";
+
+body {
+  font: 1.2em "Fira Sans", sans-serif;
+}
+
 /*@tailwind base;
 @tailwind components;
 @tailwind utilities;

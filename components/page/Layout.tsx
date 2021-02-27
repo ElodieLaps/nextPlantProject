@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { ReactNode } from "react";
-import Appbar from "./Appbar";
+import Appbar from "./appbar/Appbar";
 import Footer from "./Footer";
 
 export interface LayoutProps {

@@ -6,7 +6,7 @@ export interface AppbarProps {
 
 export default function Appbar({ title }: AppbarProps) {
    return (
-      <div className="appbar shadow-lg h-10 bg-green-500 text-white p-1 min-w-full flex flex-row items-center justify-between">
+      <div className="appbar">
          <div className="appbar-left">
             <Link href="/">
                {title}
@@ -17,11 +17,6 @@ export default function Appbar({ title }: AppbarProps) {
                about
             </Link>
          </div>
-         <style jsx> {`
-            
-            
-            
-         `} </style>
       </div>
    );
 }
